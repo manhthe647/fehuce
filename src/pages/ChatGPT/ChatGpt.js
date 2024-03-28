@@ -3,7 +3,7 @@ import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 import { debounce } from 'lodash'; // Import Lodash's debounce function
 
-const API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
+const API_KEY = "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";
 
 const cache = {}; // Basic cache object
 
