@@ -1,0 +1,4 @@
+export const MESSAGE = {
+    notification: `Đôi lời muốn nói: Lá lành đùm lá zách, lá zách đùm lá lành, tuy không giỏi giang gì nhưng cũng gọi là biết tí phờ răn en, hôm nay tôi mở khóa học cấp tốc (siêu cấp vjp pro) này mong có thể giúp anh em chinh chiến đồ án tốt nghiệp sắp tới, xa hơn nữa là xin được việc với mức lương 3k usd/tháng, ra đường chó không dám sủa, người người nhà nhà nhìn ta mà lấy đó làm ngưỡng mộ !!`,
+    practiceMessage: ` Tôi không sợ người luyện tập 10.000 cú đá chỉ một lần mà chỉ sợ người thực hành 1 cú đá 10.000 lần - Lý Tiểu Long ( mấy bác luyện bài trong web này là đủ rồi nhé ^_^)`
+}
