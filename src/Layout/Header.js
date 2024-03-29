@@ -15,7 +15,7 @@ const HeaderLayout = () => {
                 <div className='navigate'>
                     <a href='/'>LÝ THUYẾT</a>
                     <a href='/practice'>BÀI TẬP</a>
-                    <a href='/chatgpt'>CHATGPT</a>
+                    <a href='/compiler'>CODE EDITOR</a>
 
                 </div>
                 <div className='right-content'>
