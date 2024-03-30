@@ -1,7 +1,7 @@
 import { _url, timeout } from "./url"
 
-export async function getUser(msv) {
-    let url = _url.server + _url.apiUsers + msv;
+export async function getExam(examId) {
+    let url = _url.server + _url.apiExams + examId;
     let header = {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
