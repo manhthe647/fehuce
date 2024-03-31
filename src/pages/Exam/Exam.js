@@ -38,7 +38,6 @@ const Exam = () => {
         setSelectName(item.name);
         setExamData(data[item.slug])
         setStartExam(false);
-        console.log(item.name)
     }
 
     const handleStartExam = () => {
@@ -79,7 +78,7 @@ const Exam = () => {
                     (<p>
                         <h5>{selectName}</h5>
                         <h5>Tên thí sinh: {user == "" ? "Đạo hữu vô danh " : user }</h5>
-                        <p><i>Ghi chú: chỉ thành viên đã đăng ký mới có thể xem lại kết quả</i></p>
+                        <p><i>Ghi chú: hoàn thành hết các câu mới được nộp bài và nhận điểm. <br></br> Thành viên đã đăng ký sử dụng msv để xem lại kết quả </i></p>
                         <button onClick={handleStartExam} className="btn btn-primary">Bắt đầu làm</button>
                     </p>)}
                   

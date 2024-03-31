@@ -13,6 +13,7 @@ const userRoutes = [
 ];
 
 const homeRoutes = [
+    { path: "/", component: <HtmlCss1Page/>},
     { path: "/htmlcss/1", component: <HtmlCss1Page/>},
     { path: "/htmlcss/2", component: <HtmlCss2Page/>},
 ];

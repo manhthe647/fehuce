@@ -13,6 +13,7 @@
     "react-pro-sidebar": "^1.1.0",
     "react-router-dom": "^6.22.3",
     "react-scripts": "^4.0.3",
+    "react-toastify":"^8.1.0",
     "reactstrap": "^9.2.2",
     "sass": "^1.72.0",
     "web-vitals": "^2.1.4"

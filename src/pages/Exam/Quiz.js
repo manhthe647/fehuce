@@ -1,14 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { getExam } from '../../apis/apiExam';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { postUserExam } from '../../apis/apiUserExam';
 
 const Quiz = ({ selectName, data }) => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [score, setScore] = useState(0);
-    const [countTime, setCountTime] = useState(0);
-    const [isRunning, setIsRunning] = useState(true);
     const [answers, setAnswers] = useState(Array(data.length).fill(null));
     const [showScore, setShowScore] = useState(false);
     const [prevName, setPrevName] = useState(selectName);
+
+    const [maSinhVien, setMaSinhVien] = useState('');
+    const [btvnName, setBtvnName] = useState('');
+    const [answerList, setAnswerList] = useState([])
+    const [countTime, setCountTime] = useState(0);
+    const [isRunning, setIsRunning] = useState(true);
+
+    useEffect(() => {
+        const storedMsv = localStorage.getItem("msv") || "";
+        setMaSinhVien(storedMsv);
+    }, []);
 
     useEffect(() => {
         if (selectName !== prevName) {
@@ -69,16 +80,57 @@ const Quiz = ({ selectName, data }) => {
         }
     };
 
-    const handleSubmit = () => {
+
+    const handleSubmit = async () => {
         let newScore = 0;
+        let fullAnswerList = []; // Lưu trữ toàn bộ câu trả lời và thông tin câu hỏi
+
         questions.forEach((question, index) => {
-            if (isAnswerCorrect(answers[index], question.answer)) {
+            const userAnswer = answers[index];
+            const isCorrect = isAnswerCorrect(userAnswer, question.answer);
+
+            if (isCorrect) {
                 newScore += 1;
             }
+
+            // Lưu câu hỏi, câu trả lời của người dùng, và đáp án đúng vào một mảng
+            fullAnswerList.push({
+                question: question.question,
+                userAnswer: userAnswer,
+                correctAnswer: question.answer,
+                isCorrect: isCorrect,
+            });
         });
+
         setScore(newScore);
         setShowScore(true);
         setIsRunning(false);
+
+        // Chuẩn bị dữ liệu để gửi
+
+        const currentDate = new Date();
+        currentDate.setUTCHours(currentDate.getUTCHours() + 7);
+
+        const formattedDateTime = currentDate.toISOString();
+        const submissionData = {
+            id: 0,
+            maSinhVien: maSinhVien ?? "",
+            examName: selectName ?? "Chưa có tên",
+            answerList: JSON.stringify(fullAnswerList), // Gửi toàn bộ thông tin câu trả lời
+            totalScore: newScore.toString(),
+            usageTime: formattedTime ?? "",
+            createAt: formattedDateTime??"",
+        };
+
+        // Gửi dữ liệu câu trả lời
+        try {
+            console.log(submissionData); // Xem trước dữ liệu gửi
+            const response = await postUserExam(submissionData);
+            toast.success('Kết quả bài làm đã được lưu lại!!');
+        } catch (error) {
+            console.error("Submission error:", error);
+            toast.error('Có lỗi xảy ra rồi, huhu !! ');
+        }
     };
 
 
@@ -93,9 +145,7 @@ const Quiz = ({ selectName, data }) => {
 
 
     const handleNextQuestion = () => {
-        if (isAnswerCorrect(answers[currentQuestion], questions[currentQuestion].answer)) {
-            setScore(score + 1);
-        }
+
         if (currentQuestion + 1 < questions.length) {
             setCurrentQuestion(currentQuestion + 1);
         } else {
@@ -148,6 +198,7 @@ const Quiz = ({ selectName, data }) => {
                 <div>
                     <h3>Điểm số: {score}</h3>
                     <h3>Thời gian: {formatTime(countTime)}</h3>
+                    <ToastContainer />
                 </div>
             ) : (
                 <div>
@@ -159,8 +210,7 @@ const Quiz = ({ selectName, data }) => {
                     <hr />
                     {questions.map((question, index) => (
                         <div key={index}>
-                            <h5>Câu hỏi {index + 1}</h5>
-                            <h6>{question.question}</h6>
+                            <h6>Câu {index + 1}. {question.question}</h6>
                             <ul>{renderQuestionInputs(question, index)}</ul> {/* Pass index here */}
                         </div>
                     ))}
@@ -168,6 +218,7 @@ const Quiz = ({ selectName, data }) => {
                     <button className='btn btn-info' disabled={!areAllQuestionsAnswered()} onClick={handleSubmit}>Nộp bài</button>
                 </div>
             )}
+
         </div>
     );
 

@@ -1,6 +1,7 @@
 export const _url = {
     server: "https://localhost:7051/",
-    apiExams: "Exams/",
+    apiUserExams: "UserExams/",
+    apiUserPractice: "UserPractice/",
     apiUsers: "Users/"
 };
 

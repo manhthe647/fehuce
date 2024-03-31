@@ -5,18 +5,18 @@ import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 
 const Home = ({children}) => {
   document.title = "Lý thuyết - FeHuce"
-
+  const urlClient = "http://localhost:3000/"
   const menuList = [
     {
       subMenu: "HTML-CSS",
       menuItem: [
         {
           name: "Lý thuyết 1",
-          link: "/htmlcss/1"
+          link: "htmlcss/1"
         },
         {
           name: "Thực hành 1",
-          link: "/htmlcss/2"
+          link: "htmlcss/2"
         }
       ]
     },
@@ -49,11 +49,9 @@ const Home = ({children}) => {
     }
   ]
 
-   const handleChangePath = (link) => {
-      const currentPath = window.location.pathname;
-      const newPath = `${currentPath}/${link}`;
-      window.location.href = newPath;
-   }
+  const handleChangePath = (link) => {
+     window.location.href= urlClient + link
+};
 
   return (
     <React.Fragment>
@@ -61,10 +59,10 @@ const Home = ({children}) => {
         <AlertInfo message={MESSAGE.notification} />
       </div>
       <div className="row p-0 m-0">
-        <div className="col-md-3 p-0">
+        <div className="col-md-4 p-0 me-4">
           <div className="pe-2">
 
-            <Sidebar backgroundColor="#BCD0BD" width="100%" style={{ minWidth: '200px' }}>
+            <Sidebar backgroundColor="#BCD0BD" width="84%" style={{ minWidth: '200px' }}>
               <Menu>
                 {menuList.map((item, key) => (
                   <SubMenu key={key} label={item.subMenu}>
@@ -80,7 +78,7 @@ const Home = ({children}) => {
           </div>
 
         </div>
-        <div className="col-md-9 p-0">
+        <div className="col-md-7 p-0 ">
           {children}
         </div>
       </div>
