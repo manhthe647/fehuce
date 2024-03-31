@@ -1,6 +1,9 @@
 import { useState } from "react";
 import LuyenTap1Img from "../../../../assets/images/htmlcss/luyentap1.png"
 import LuyenTap2Img from "../../../../assets/images/htmlcss/luyentap2.png"
+import LuyenTap3Img from "../../../../assets/images/htmlcss/luyentap3.png"
+import LuyenTap4Img from "../../../../assets/images/htmlcss/luyentap4.png"
+
 import HomeworkUpload from "../../../../component/HomeworkUpload";
 
 
@@ -41,11 +44,27 @@ const HtmlCss2 = () => {
                 </div>
             </div>
             <hr></hr>
+              
+            <div></div>
             <div>
                 <h5>Bài 2. Code theo mẫu dưới đây</h5>
                 <div>
                     <img src={LuyenTap2Img} width="100%" height="70%" />
                 </div>
+                <div>
+                    <hr></hr>
+                <h5>Bài 3 - 4 (luyện thêm nếu muốn )</h5>
+               <div>
+               <img src={LuyenTap3Img} width="100%" height="70%" />
+
+               </div>
+               <hr></hr>
+               <div>
+               <img src={LuyenTap4Img} width="100%" height="70%" />
+
+               </div>
+                </div>
+               <hr></hr>
                 <p>Công thức chung
                     <br />
                     Cần xác định rõ: đâu là image, đâu là text, đâu là button, để biết khi nào dùng hình, khi nào dùng text để sử dụng CSS cho đúng.
