@@ -25,14 +25,14 @@ const HtmlCss2 = () => {
                 <p>
                     Công cụ đo đạc phần tử:{" "}
                     <a href="https://chromewebstore.google.com/detail/page-ruler/jcbmcnpepaddcedmjdcmhbekjhbfnlff?hl=vi"
-                        target="_blank">
+                        target="_blank" rel="noreferrer">
                         Page ruler
                     </a>
                 </p>
                 <p>Công cụ lấy màu phần tử:
                     <a
                         href="https://chromewebstore.google.com/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg?hl=vi"
-                        target="_blank">
+                        target="_blank" rel="noreferrer">
                         ColorPick Eyedropper
                     </a>
                 </p>

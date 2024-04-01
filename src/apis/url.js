@@ -1,5 +1,5 @@
 export const _url = {
-    server: "https://localhost:7051/",
+    server: "http://znamz981-001-site1.anytempurl.com/",
     apiUserExams: "UserExams/",
     apiUserPractice: "UserPractice/",
     apiUsers: "Users/"

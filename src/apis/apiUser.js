@@ -13,7 +13,8 @@ export async function getUser(msv) {
         });
         if (response.status === 200) {
             return response.json();
-        } else {
+        } 
+        else {
             throw new Error('Failed to fetch data');
         }
     } catch (error) {
