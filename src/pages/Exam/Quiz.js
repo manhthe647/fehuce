@@ -129,7 +129,7 @@ const Quiz = ({ selectName, data }) => {
             toast.success('Kết quả bài làm đã được lưu lại!!');
         } catch (error) {
             console.error("Submission error:", error);
-            toast.error('Có lỗi xảy ra rồi, huhu !! ');
+            toast.error('Hết tiền thuê server nên kq sẽ k lưu lại đâu, huhu !! ');
         }
     };
 

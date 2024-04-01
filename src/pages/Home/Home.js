@@ -5,7 +5,7 @@ import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 
 const Home = ({children}) => {
   document.title = "Lý thuyết - FeHuce"
-  const urlClient = "http://localhost:3000/"
+  const urlClient = window.location.href;
   const menuList = [
     {
       subMenu: "HTML-CSS",

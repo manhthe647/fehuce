@@ -29,7 +29,7 @@ const HomeworkUpload = ({ modalState, toggleModal, homeworkName, ctent1, ctent2,
             content3: content3 ?? ""
         }
         var response = await postUserPractice(data)
-        response ? toast.success('Gửi dữ liệu thành công!') : toast.error('Có lỗi xảy ra rồi! Vui lòng kiểm tra lại mã sinh viên');
+        response ? toast.success('Gửi dữ liệu thành công!') : toast.error('Có lỗi xra rồi, 1 là do msv, 2 là hết tiền thuê server :(');
         toggleModal()
     }
 
