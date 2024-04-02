@@ -5,7 +5,7 @@ const HtmlCss1 = () => {
     return (
         <div className="pb-4">
             <div>
-                <iframe width="100%" height="400" src="https://www.youtube.com/embed/UCdviOgDpCw?si=9hdTpWowvW91iA16" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                {/* <iframe width="100%" height="400" src="https://www.youtube.com/embed/UCdviOgDpCw?si=9hdTpWowvW91iA16" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> */}
             </div>
             <hr />
             <div>
