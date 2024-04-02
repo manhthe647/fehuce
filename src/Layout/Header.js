@@ -8,28 +8,28 @@ import {
 
 const HeaderLayout = () => {
 
-    const [modal, setModal] = useState(true)
-    const [msv, setMsv] = useState('');
+    // const [modal, setModal] = useState(true)
+    // const [msv, setMsv] = useState('');
 
-    var getMsv = localStorage.getItem('msv') ? true : null
+    // var getMsv = localStorage.getItem('msv') ? true : null
 
-    useEffect(()=>{
-        if(getMsv){
-           setModal(false)
-        }
-    },[])
+    // useEffect(()=>{
+    //     if(getMsv){
+    //        setModal(false)
+    //     }
+    // },[])
 
-    const handleClick = () => {
-        localStorage.setItem('msv', msv);
-        setModal(!modal)
-        if (window.location.pathname === '/lookup') {
-            window.location.reload();
-        }
-    }
+    // const handleClick = () => {
+    //     localStorage.setItem('msv', msv);
+    //     setModal(!modal)
+    //     if (window.location.pathname === '/lookup') {
+    //         window.location.reload();
+    //     }
+    // }
 
-    const toggleModal = () => {
-        setModal(!modal)
-    }
+    // const toggleModal = () => {
+    //     setModal(!modal)
+    // }
 
     return (
         <React.Fragment>
@@ -40,8 +40,8 @@ const HeaderLayout = () => {
                 </div>
                 <div className='navigate'>
                     <a href='/'>TRANG CHỦ</a>
-                    <a href='/exam'>TRẮC NGHIỆM</a>
-                    <a href='/lookup'>TRA CỨU</a>
+                    <a href='/exam'>KIỂM TRA</a>
+                    {/* <a href='/lookup'>TRA CỨU</a> */}
 
                 </div>
                 <div className='right-content'>
@@ -52,7 +52,7 @@ const HeaderLayout = () => {
             </div>
             <div style={{ zIndex: '999' }}>
 
-                <Modal isOpen={modal} toggle={toggleModal} centered>
+                {/* <Modal isOpen={modal} toggle={toggleModal} centered>
                     <ModalBody className="modal-body p-5">
                         <div className="text-center mb-4">
                             <h5 className="modal-title" id="staticBackdropLabel">
@@ -82,7 +82,7 @@ const HeaderLayout = () => {
                             Save
                         </button>
                     </ModalBody>
-                </Modal>
+                </Modal> */}
             </div>
         </React.Fragment>
     );

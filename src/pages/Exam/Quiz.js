@@ -16,10 +16,10 @@ const Quiz = ({ selectName, data }) => {
     const [countTime, setCountTime] = useState(0);
     const [isRunning, setIsRunning] = useState(true);
 
-    useEffect(() => {
-        const storedMsv = localStorage.getItem("msv") || "";
-        setMaSinhVien(storedMsv);
-    }, []);
+    // useEffect(() => {
+    //     const storedMsv = localStorage.getItem("msv") || "";
+    //     setMaSinhVien(storedMsv);
+    // }, []);
 
     useEffect(() => {
         if (selectName !== prevName) {
@@ -100,6 +100,7 @@ const Quiz = ({ selectName, data }) => {
                 correctAnswer: question.answer,
                 isCorrect: isCorrect,
             });
+            setAnswerList(fullAnswerList)
         });
 
         setScore(newScore);
@@ -108,29 +109,29 @@ const Quiz = ({ selectName, data }) => {
 
         // Chuẩn bị dữ liệu để gửi
 
-        const currentDate = new Date();
-        currentDate.setUTCHours(currentDate.getUTCHours() + 7);
+        // const currentDate = new Date();
+        // currentDate.setUTCHours(currentDate.getUTCHours() + 7);
 
-        const formattedDateTime = currentDate.toISOString();
-        const submissionData = {
-            id: 0,
-            maSinhVien: maSinhVien ?? "",
-            examName: selectName ?? "Chưa có tên",
-            answerList: JSON.stringify(fullAnswerList), // Gửi toàn bộ thông tin câu trả lời
-            totalScore: newScore.toString(),
-            usageTime: formattedTime ?? "",
-            createAt: formattedDateTime??"",
-        };
+        // const formattedDateTime = currentDate.toISOString();
+        // const submissionData = {
+        //     id: 0,
+        //     maSinhVien: maSinhVien ?? "",
+        //     examName: selectName ?? "Chưa có tên",
+        //     answerList: JSON.stringify(fullAnswerList), // Gửi toàn bộ thông tin câu trả lời
+        //     totalScore: newScore.toString(),
+        //     usageTime: formattedTime ?? "",
+        //     createAt: formattedDateTime??"",
+        // };
 
-        // Gửi dữ liệu câu trả lời
-        try {
-            console.log(submissionData); // Xem trước dữ liệu gửi
-            const response = await postUserExam(submissionData);
-            toast.success('Kết quả bài làm đã được lưu lại!!');
-        } catch (error) {
-            console.error("Submission error:", error);
-            toast.error('Hết tiền thuê server nên kq sẽ k lưu lại đâu, huhu !! ');
-        }
+        // // Gửi dữ liệu câu trả lời
+        // try {
+        //     console.log(submissionData); // Xem trước dữ liệu gửi
+        //     const response = await postUserExam(submissionData);
+        //     toast.success('Kết quả bài làm đã được lưu lại!!');
+        // } catch (error) {
+        //     console.error("Submission error:", error);
+        //     toast.error('Hết tiền thuê server nên kq sẽ k lưu lại đâu, huhu !! ');
+        // }
     };
 
 
@@ -198,7 +199,26 @@ const Quiz = ({ selectName, data }) => {
                 <div>
                     <h3>Điểm số: {score}</h3>
                     <h3>Thời gian: {formatTime(countTime)}</h3>
-                    <ToastContainer />
+                    <hr></hr>
+                    <div>
+
+                        {answerList.map((answerItem, index) => (
+                            <div key={index}>
+                                <p>
+                                    <strong>Câu hỏi {index + 1}:</strong> {answerItem.question}
+                                </p>
+                                <p>
+                                    <strong>Đáp án của bạn:</strong> {answerItem.userAnswer}
+                                </p>
+                                <p>
+                                    <strong>Đáp án đúng:</strong> {answerItem.correctAnswer}
+                                </p>
+                                <hr />
+                            </div>
+                        ))}
+
+                    </div>
+                    {/* <ToastContainer /> */}
                 </div>
             ) : (
                 <div>

@@ -4,75 +4,76 @@ import { getUserPractice } from "../../apis/apiUserPractice";
 import { getUserExam } from "../../apis/apiUserExam";
 
 const Lookup = () => {
-  const [user, setUser] = useState("");
-  const [currentMsv, setCurrentMsv] = useState("");
+  // const [user, setUser] = useState("");
+  // const [currentMsv, setCurrentMsv] = useState("");
 
-  const [examData, setExamData] = useState([])
-  const [homeworkData, setHomeworkData] = useState([]);
-  const [answerList, setAnswerList] = useState([])
+  // const [examData, setExamData] = useState([])
+  // const [homeworkData, setHomeworkData] = useState([]);
+  // const [answerList, setAnswerList] = useState([])
 
-  useEffect(() => {
-    const storedMsv = localStorage.getItem("msv") || "";
-    setCurrentMsv(storedMsv);
-  }, []);
+  // useEffect(() => {
+  //   const storedMsv = localStorage.getItem("msv") || "";
+  //   setCurrentMsv(storedMsv);
+  // }, []);
 
-  useEffect(() => {
-    if (currentMsv !== "") {
-      getUser(currentMsv)
-        .then((res) => {
-          if (res && res.length > 0) {
-            setUser(res[0].name);
-          }
-        })
-        .catch((error) => {
-          console.error("Failed to fetch data:", error);
-        });
-    }
-  }, [currentMsv]);
+  // useEffect(() => {
+  //   if (currentMsv !== "") {
+  //     getUser(currentMsv)
+  //       .then((res) => {
+  //         if (res && res.length > 0) {
+  //           setUser(res[0].name);
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         console.error("Failed to fetch data:", error);
+  //       });
+  //   }
+  // }, [currentMsv]);
 
-  const handleGetHomework = (e) => {
-    e.preventDefault();
-    if (currentMsv !== "") {
-      getUserPractice(currentMsv)
-        .then((res) => {
-          if (res && res.length > 0) {
-            setHomeworkData(res);
-          }
-        })
-        .catch((error) => {
-          console.error("Failed to fetch data:", error);
-        });
-    }
-  }
+  // const handleGetHomework = (e) => {
+  //   e.preventDefault();
+  //   if (currentMsv !== "") {
+  //     getUserPractice(currentMsv)
+  //       .then((res) => {
+  //         if (res && res.length > 0) {
+  //           setHomeworkData(res);
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         console.error("Failed to fetch data:", error);
+  //       });
+  //   }
+  // }
 
-  const handleGetExam = (e) => {
-    e.preventDefault();
-    if (currentMsv !== "") {
-      getUserExam(currentMsv)
-        .then((res) => {
-          if (res && res.length > 0) {
-            setExamData(res);
-            const parsedAnswerList = JSON.parse(res[0].answerList) ?? "";
-            setAnswerList(parsedAnswerList);
-            console.log(res);
-            console.log(parsedAnswerList);
-          }
-        })
-        .catch((error) => {
-          console.error("Failed to fetch data:", error);
-        });
-    }
-  }
+  // const handleGetExam = (e) => {
+  //   e.preventDefault();
+  //   if (currentMsv !== "") {
+  //     getUserExam(currentMsv)
+  //       .then((res) => {
+  //         if (res && res.length > 0) {
+  //           setExamData(res);
+  //           const parsedAnswerList = JSON.parse(res[0].answerList) ?? "";
+  //           setAnswerList(parsedAnswerList);
+  //           console.log(res);
+  //           console.log(parsedAnswerList);
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         console.error("Failed to fetch data:", error);
+  //       });
+  //   }
+  // }
 
-  const handleChangeMsv = () => {
-    localStorage.setItem("msv", "");
-    setCurrentMsv("");
-    window.location.reload();
-  }
+  // const handleChangeMsv = () => {
+  //   localStorage.setItem("msv", "");
+  //   setCurrentMsv("");
+  //   window.location.reload();
+  // }
 
   return (
     <React.Fragment>
-      <div className="p-2">
+      <p>Nothing</p>
+      {/* <div className="p-2">
         {user !== "" ? (
           <div>
             <div>
@@ -174,7 +175,7 @@ const Lookup = () => {
 
           </div>
         )}
-      </div>
+      </div> */}
     </React.Fragment>
   );
 };

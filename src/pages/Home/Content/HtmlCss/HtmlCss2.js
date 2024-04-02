@@ -8,18 +8,18 @@ import HomeworkUpload from "../../../../component/HomeworkUpload";
 
 
 const HtmlCss2 = () => {
-    const [modal, setModal] = useState();
-    const toggle = () => {
-        setModal(!modal)
-    }
+    // const [modal, setModal] = useState();
+    // const toggle = () => {
+    //     setModal(!modal)
+    // }
 
     return (
         <div>
-            <div>
+            {/* <div>
                 <button className="btn btn-primary" onClick={() => toggle()}>Nộp bài</button>
                 <p className="mt-1"><i>Chỉ dành cho thành viên ( 2 bài nộp 2 lần )</i></p>
                 <HomeworkUpload modalState={modal} toggleModal={() => toggle()} homeworkName="Luyện tập 1" />
-            </div>
+            </div> */}
             <hr></hr>
             <div>
                 <p>

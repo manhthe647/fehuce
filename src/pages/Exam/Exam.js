@@ -12,27 +12,27 @@ const Exam = () => {
     const [examData, setExamData] = useState(data["de1"])
     const [startExam, setStartExam] = useState(false);
 
-    const [user, setUser] = useState("");
-    const [currentMsv, setCurrentMsv] = useState("");
+    // const [user, setUser] = useState("");
+    // const [currentMsv, setCurrentMsv] = useState("");
   
-    useEffect(() => {
-      const storedMsv = localStorage.getItem("msv") || "";
-      setCurrentMsv(storedMsv);
-    }, []);
+    // useEffect(() => {
+    //   const storedMsv = localStorage.getItem("msv") || "";
+    //   setCurrentMsv(storedMsv);
+    // }, []);
 
-    useEffect(() => {
-        if (currentMsv !== "") {
-          getUser(currentMsv)
-            .then((res) => {
-              if (res && res.length > 0) {
-                setUser(res[0].name);
-              }
-            })
-            .catch((error) => {
-              console.error("Failed to fetch data:", error);
-            });
-        }
-      }, [currentMsv]);
+    // useEffect(() => {
+    //     if (currentMsv !== "") {
+    //       getUser(currentMsv)
+    //         .then((res) => {
+    //           if (res && res.length > 0) {
+    //             setUser(res[0].name);
+    //           }
+    //         })
+    //         .catch((error) => {
+    //           console.error("Failed to fetch data:", error);
+    //         });
+    //     }
+    //   }, [currentMsv]);
 
     const handleMenuClick = (item) => {
         setSelectName(item.name);
@@ -77,8 +77,8 @@ const Exam = () => {
                     {startExam ?   <Quiz selectName={selectName} data={examData} /> : 
                     (<p>
                         <h5>{selectName}</h5>
-                        <h5>Tên thí sinh: {user == "" ? "Đạo hữu vô danh " : user }</h5>
-                        <p><i>Ghi chú: hoàn thành hết các câu mới được nộp bài và nhận điểm. <br></br> Thành viên đã đăng ký sử dụng msv để xem lại kết quả </i></p>
+                        {/* <h5>Tên thí sinh: {user == "" ? "Đạo hữu vô danh " : user }</h5> */}
+                        {/* <p><i>Ghi chú: hoàn thành hết các câu mới được nộp bài và nhận điểm. <br></br> Thành viên đã đăng ký sử dụng msv để xem lại kết quả </i></p> */}
                         <button onClick={handleStartExam} className="btn btn-primary">Bắt đầu làm</button>
                     </p>)}
                   
