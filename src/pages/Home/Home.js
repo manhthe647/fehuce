@@ -15,8 +15,17 @@ const Home = ({children}) => {
           link: "htmlcss/1"
         },
         {
-          name: "Thực hành 1",
+          name: "BTVN 1",
           link: "htmlcss/2"
+        },
+        {
+          name: "Lý thuyết 2",
+          link: "htmlcss/3"
+        }
+        ,
+        {
+          name: "BTVN 2",
+          link: "htmlcss/4"
         }
       ]
     },
