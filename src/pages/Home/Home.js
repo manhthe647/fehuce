@@ -26,6 +26,10 @@ const Home = ({children}) => {
         {
           name: "BTVN 2",
           link: "htmlcss/4"
+        },
+        {
+          name: "TH Tạo LandingPage",
+          link: "htmlcss/5"
         }
       ]
     },
@@ -33,8 +37,8 @@ const Home = ({children}) => {
       subMenu: "Javascript",
       menuItem: [
         {
-          name: "Chưa có",
-          link: ""
+          name: "Buổi 1",
+          link: "js/1"
         }
       ]
     },
