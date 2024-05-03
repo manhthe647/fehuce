@@ -39,6 +39,19 @@ const Home = ({children}) => {
         {
           name: "Buổi 1",
           link: "js/1"
+        },
+        {
+          name: "Buổi 2",
+          link: "js/2"
+        }
+      ]
+    },
+    {
+      subMenu: "Bootstrap 5",
+      menuItem: [
+        {
+          name: "Buổi 1",
+          link: "bootstrap/1"
         }
       ]
     },

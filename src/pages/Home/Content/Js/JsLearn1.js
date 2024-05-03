@@ -4,6 +4,9 @@ const JsLearn1 = () => {
 
     return (
         <div>
+            <div>
+            <iframe width="100%" height="400" src="https://www.youtube.com/embed/nCPxkOTC-uw?si=9s-c2saH_zNpG45m" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
                 <h5>1.JS CORE</h5>
                 <ul>
                     <li>1. Khai báo biến (Let, Var, Const )</li>
