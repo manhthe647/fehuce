@@ -5,6 +5,7 @@ import { Icon } from '@iconify/react';
 import {
     Modal, ModalBody, Label, Input,
 } from "reactstrap";
+import { Link } from 'react-router-dom';
 
 const HeaderLayout = () => {
 
@@ -39,8 +40,12 @@ const HeaderLayout = () => {
                     <img src={BubbleImg} className='img-logo img-fluid' />
                 </div>
                 <div className='navigate'>
-                    <a href='/'>TRANG CHỦ</a>
-                    <a href='/exam'>KIỂM TRA</a>
+                    <Link to="/">TRANG CHỦ</Link>
+                    <Link to="/exam">KIỂM TRA</Link>
+                    {/* <Link to="/error">KIỂM TRA</Link> */}
+
+                    {/* <a href='/'>TRANG CHỦ</a>
+                    <a href='/exam'>KIỂM TRA</a> */}
                     {/* <a href='/lookup'>TRA CỨU</a> */}
 
                 </div>

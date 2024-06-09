@@ -2,34 +2,36 @@ import React from "react";
 import AlertInfo from "../../component/Alert";
 import { MESSAGE } from '../../common/constants/message'
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
+import { useNavigate } from 'react-router-dom';
 
 const Home = ({children}) => {
   document.title = "Lý thuyết - FeHuce"
-  const urlClient = "https://fehuce.netlify.app/";
+  // const urlClient = "https://fehuce.netlify.app/";
+  const urlClient = "http://localhost:3000/";
   const menuList = [
     {
       subMenu: "HTML-CSS",
       menuItem: [
         {
           name: "Lý thuyết 1",
-          link: "htmlcss/1"
+          link: "/htmlcss/1"
         },
         {
           name: "BTVN 1",
-          link: "htmlcss/2"
+          link: "/htmlcss/2"
         },
         {
           name: "Lý thuyết 2",
-          link: "htmlcss/3"
+          link: "/htmlcss/3"
         }
         ,
         {
           name: "BTVN 2",
-          link: "htmlcss/4"
+          link: "/htmlcss/4"
         },
         {
           name: "TH Tạo LandingPage",
-          link: "htmlcss/5"
+          link: "/htmlcss/5"
         }
       ]
     },
@@ -38,11 +40,15 @@ const Home = ({children}) => {
       menuItem: [
         {
           name: "Buổi 1",
-          link: "js/1"
+          link: "/js/1"
         },
         {
           name: "Buổi 2",
-          link: "js/2"
+          link: "/js/2"
+        },
+        {
+          name: "Buổi 3",
+          link: "/js/3"
         }
       ]
     },
@@ -51,7 +57,7 @@ const Home = ({children}) => {
       menuItem: [
         {
           name: "Buổi 1",
-          link: "bootstrap/1"
+          link: "/bootstrap/1"
         }
       ]
     },
@@ -59,8 +65,8 @@ const Home = ({children}) => {
       subMenu: "Git cơ bản",
       menuItem: [
         {
-          name: "Chưa có",
-          link: ""
+          name: "Buổi 1",
+          link: "/git/1"
         }
       ]
     },
@@ -69,15 +75,18 @@ const Home = ({children}) => {
       menuItem: [
         {
           name: "Chưa có",
-          link: ""
+          link: "/"
         }
       ]
     }
   ]
 
+  const navigate = useNavigate();
+
   const handleChangePath = (link) => {
-     window.location.href= urlClient + link
-};
+    
+    navigate(link);
+  };
 
   return (
     <React.Fragment>

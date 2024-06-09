@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, BrowserRouter, Navigate } from "react-router-dom";
 import { userRoutes, homeRoutes } from "./allRoutes";
 import Layout from "../Layout";
 import Home from "../pages/Home/Home";
@@ -27,6 +27,7 @@ const Index = () => {
                         <Route path={route.path} element={<Layout><Home>{route.component}</Home></Layout>} key={idx} exact={true} />
                     ))}
                     </Route>
+                     <Route path="*" element={<Navigate to="/error" replace />} ></Route>
                   
                 </Routes>
             </Suspense>

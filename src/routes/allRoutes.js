@@ -1,4 +1,6 @@
 import React from 'react';
+import Git1 from '../pages/Home/Content/Git/Git1';
+import ErrorPage from '../pages/ExtendPages/ErrorPage';
 
 const HomePage = React.lazy(()=>import('../pages/Home/Home'))
 // const LookupPage = React.lazy(()=>import('../pages/Lookup/Lookup'))
@@ -12,6 +14,8 @@ const HtmlCss5Page = React.lazy(()=>import('../pages/Home/Content/HtmlCss/HtmlCs
 //js
 const Js1Page = React.lazy(()=>import('../pages/Home/Content/Js/JsLearn1'))
 const Js2Page = React.lazy(()=>import('../pages/Home/Content/Js/JsLearn2'))
+const Js3Page = React.lazy(()=>import('../pages/Home/Content/Js/JsLearn3'))
+
 //boostrap
 const Bootstrap1Page = React.lazy(()=>import('../pages/Home/Content/Boostrap/BootstrapB1'))
 
@@ -19,6 +23,8 @@ const Bootstrap1Page = React.lazy(()=>import('../pages/Home/Content/Boostrap/Boo
 const userRoutes = [
     { path: "/exam", component: <ExamPage/> },
     // { path: "/lookup", component: <LookupPage/> },
+    { path: "/error", component: <ErrorPage/>},
+
 ];
 
 const homeRoutes = [
@@ -28,10 +34,15 @@ const homeRoutes = [
     { path: "/htmlcss/3", component: <HtmlCss3Page/>},
     { path: "/htmlcss/4", component: <HtmlCss4Page/>},
     { path: "/htmlcss/5", component: <HtmlCss5Page/>},
+    // js
     { path: "/js/1", component: <Js1Page/>},
     { path: "/js/2", component: <Js2Page/>},
-    { path: "/bootstrap/1", component: <Bootstrap1Page/>},
+    { path: "/js/3", component: <Js3Page/>},
 
+    // bt
+    { path: "/bootstrap/1", component: <Bootstrap1Page/>},
+    // git
+    { path: "/git/1", component: <Git1/>},
 
 ];
 
